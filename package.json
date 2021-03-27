@@ -1,0 +1,29 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "This is a sample project learning how the Payfast subscription api works",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blubnana/payfast-subscription-example.git"
+  },
+  "keywords": [
+    "api",
+    "payfast",
+    "payfast-subscription"
+  ],
+  "author": "khomotso zwane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blubnana/payfast-subscription-example/issues"
+  },
+  "homepage": "https://github.com/blubnana/payfast-subscription-example#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "moment": "^2.29.1"
+  }
+}

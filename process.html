@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Payfast</title>
+</head>
+<body>
+    <div id="holder-result"></div>    
+    <script src="https://www.payfast.co.za/onsite/engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            
+            let params = window.location.search.substring(4);
+
+            let splitArry =  params.split("&");  
+            let uuid = splitArry[0];
+
+            console.log(uuid);
+            window.payfast_do_onsite_payment({
+                "uuid": uuid,
+                "return_url":"https://blu-bnana-network.web.app/payments/payfast/return-url.html",
+                "cancel_url":"https://blu-bnana-network.web.app/payments/payfast/cancel-url.html"
+            }, (result) => {
+                if(result){
+                    //Perform api call to update the state
+                    location.href = 'https://blu-bnana-network.web.app/payments/payfast/return-url.html';
+                }else{
+                    location.href = 'https://blu-bnana-network.web.app/payments/payfast/cancel-url.html';
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
